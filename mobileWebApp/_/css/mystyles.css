@@ -1,0 +1,38 @@
+.wrap {
+    white-space: normal !important;
+}
+
+body {
+	font-family: "Helvetica", Arial, sans-serif;
+}
+
+#home .ui-controlgroup{
+	width: 75%;
+	margin: 0 auto;
+	max-width: 300px;
+}
+
+#title {
+	text-align: center;
+}
+
+#result img{
+	display: block;
+	margin: 0 auto;
+	margin-top: 5%;
+	width: 60%;
+	height: 60%;
+	max-width: 300px;
+}
+
+#aboutTitle {
+	text-align: center;
+	margin-bottom: 15%;
+}
+
+#tweets img{
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin: 5% 5% 5% 5%;
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<title>LOL!</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+		<!--Angular JS-->
+		<script src="_/js/angular.js"></script>
+
+		<!--jQuery libraries-->
+		<link rel="stylesheet" href="_/css/jquery.mobile.css"/>
+		<script src="_/js/jquery.js"></script>
+		<script src="_/js/jquery.mobile.js"></script>
+
+		<!--links to external files-->
+		<script src="_/js/myscript.js"></script>
+		<link rel="stylesheet" href="_/css/mystyles.css"/>
+
+		<!--detect shake http://www.9lessons.info/2014/12/detect-shake-in-phone-using-jquery.html-->
+		<script type="text/javascript" src="_/js/jquery.ios-shake.js"></script>
+		<script type="text/javascript" src="_/js/jquery.ui.shake.js"></script>
+		<script type="text/javascript"> 
+			$(document).ready(function() {
+				setInterval(function(){ $('#shake').shake(); }, 3000);
+
+				function phoneShake() {
+					var x=$('#hiddenval').val();
+					if(x==1){
+						$("#hiddenval").val('2');
+						$('#result').html("<img src='https://s-media-cache-ak0.pinimg.com/236x/82/49/5d/82495d376c59ccfa9da6b5334f20b772.jpg'/>");
+					} else if(x==2) {
+						$("#hiddenval").val('3');
+						$('#result').html("<img src='images/magCover.jpg'/>");
+					} else {
+						$("#hiddenval").val('1');
+						$('#result').html("<img src='http://i.imgur.com/9XHLVqe.png?1'/>");
+					}
+				}
+				$.shake({ callback: function() {
+										phoneShake();
+									}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--Home page-->
+		<div id="home" data-theme="b" data-role="page" data-title="View Source: Home"> 
+			<div data-role="header"> <!--Header-->
+				<h1>Lolgends</h1>
+				<a href="#info" 
+					data-icon="info" 
+					data-iconpos="notext" 
+					data-rel="dialog" 
+					class="ui-btn-right"
+					>Info</a>
+			</div> <!--Header-->
+			<div id="title" data-role="content"> <!--content-->
+				<div><h4>LCS Gossip and Entertainment News</h4>
+					<h5>Shake phone to Change Cover</h5>
+				</div>
+				<div id="result"> 
+					<div id="shake">
+						<img src="images/magCover.jpg" alt="dyrus">
+					</div>
+				</div> 
+				<input type="hidden" id="hiddenval" val="1">
+			</div> <!--content-->
+			<div data-role="controlgroup"> <!--Links-->
+				<a href="#blog" 
+					data-transition="flip" 
+					data-role="button"
+					data-icon="arrow-r"
+				>Reddit</a> <!--Blog Link-->
+				<a href="#videos" 
+					data-transition="flip" 
+					data-role="button"
+					data-icon="arrow-r"
+				>Videos</a> <!--Videos Link-->
+				<a href="#tweets" 
+					data-transition="flip" 
+					data-role="button"
+					data-icon="arrow-r"
+				>Tweets</a> <!--Tweets Link-->
+				<a href="#feelings" 
+					data-transition="flip" 
+					data-role="button"
+					data-icon="arrow-r"
+				>Fans</a> <!--Feelings Link-->
+			</div> <!--Links-->
+		</div> 
+		<!--Blog page-->
+		<div id="blog" data-theme="b" data-role="page" data-title="View Source: Blog"> 
+			<div data-role="header" data-position="fixed"> <!--Header-->
+					<h1>Reddit</h1>
+					<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+					<a href="#info" data-icon="info" data-iconpos="notext" data-rel="dialog">Info</a>
+			</div> <!--Header-->
+			<div data-role="content"> <!--content-->
+				<div id="reddit-content"></div> <!--accordian-->			
+			</div> <!--content-->
+			<div data-role="footer" data-position="fixed"> <!--Links-->
+				<div data-role="navbar"> <!--navbar-->
+					<ul>			
+						<li><a href="#home"
+						data-transition="pop"
+						data-role="button"
+						data-icon="home"
+						>Home</a></li> <!--Home Link-->
+						<li><a href="#videos" 
+						data-role="button"
+						data-icon="video"
+						>Videos</a></li> <!--Videos Link-->
+						<li><a href="#tweets"  
+						data-role="button"
+						data-icon="user"
+						>Tweets</a></li> <!--Tweets Link-->
+						<li><a href="#feelings"  
+						data-role="button"
+						data-icon="edit"
+						>Fans</a></li> <!--Feelings Link-->
+					</ul>	
+				</div> <!--navbar-->
+			</div> <!--Links-->
+		</div> <!--Blog page-->
+		<!--Videos page-->
+		<div id="videos" data-theme="b" data-role="page" data-title="View Source: Videos"> 
+			<div data-role="header" data-position="fixed"> <!--Header-->
+					<h1>Videos</h1>
+					<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+					<a href="#info" data-icon="info" data-iconpos="notext" data-rel="dialog">Info</a>
+			</div> <!--Header-->
+			<div data-role="content"> <!--content-->
+				<ul data-role="listview" data-filter="true" data-inset="true"> <!--Video List-->
+					<li><a href="https://www.youtube.com/watch?v=csdWOHulhgc">
+						<img src="images/TSM_Logo.png" alt="View Source Logo"/> 
+						<h2>TSM: LEGENDS - Season 2 Episode 11 - Leaders (Playoffs)</h2>
+						<p>How can three leaders coexist on one team? TSM faces Cloud 9 in the NA LCS Spring Split Quarterfinals.</p>						
+					</a></li>
+					<li><a href="https://www.youtube.com/watch?v=6yKawMOtj6c">
+						<img src="images/liquid.png" alt="View Source Logo"/> 
+						<h2>Liquid | Rebirth EP14 - Squad</h2>
+						<p>Rebirth is a real story about Liquid, one of ten pro esports teams in the North American League Championship Series. </p>						
+					</a></li>
+				</ul> <!--Video List-->
+			</div> <!--content-->
+			<div data-role="footer" data-position="fixed"> <!--Links-->
+				<div data-role="navbar"> <!--navbar-->
+					<ul>	
+						<li><a href="#home"
+						data-transition="pop"
+						data-role="button"
+						data-icon="home"
+						>Home</a></li> <!--Home Link-->
+						<li><a href="#blog" 
+						data-role="button"
+						data-icon="bars"
+						>Reddit</a></li> <!--Reddit Link-->			
+						<li><a href="#tweets" 
+						data-role="button"
+						data-icon="user"
+						>Tweets</a></li> <!--Tweets Link-->
+						<li><a href="#feelings" 
+						data-role="button"
+						data-icon="edit"
+						>Fans</a></li> <!--Feelings Link-->
+					</ul>	
+				</div> <!--navbar-->
+			</div> <!--Links-->
+		</div> 
+		<!--Tweets page-->
+		<div id="tweets" data-theme="b" data-role="page" data-title="View Source: Tweets"> 
+			<div data-role="header" data-position="fixed"> <!--Header-->
+					<h1>Tweets</h1>
+					<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+					<a href="#info" data-icon="info" data-iconpos="notext" data-rel="dialog">Info</a>
+			</div> <!--Header-->
+			<div data-role="content"> <!--content-->
+				<div id="tweetList"></div>
+			</div> <!--content-->
+			<div data-role="footer" data-position="fixed"> <!--Links-->
+				<div data-role="navbar"> <!--navbar-->
+					<ul>
+						<li><a href="#home"
+						data-transition="pop"
+						data-role="button"
+						data-icon="home"
+						>Home</a></li> <!--Home Link-->	
+						<li><a href="#blog" 
+						data-role="button"
+						data-icon="bars"
+						>Reddit</a></li> <!--Reddit Link-->			
+						<li><a href="#videos" 
+						data-role="button"
+						data-icon="video"
+						>Videos</a></li> <!--Videos Link-->
+						<li><a href="#feelings" 
+						data-role="button"
+						data-icon="edit"
+						>Fans</a></li> <!--Feelings Link-->
+					</ul>	
+				</div> <!--navbar-->
+			</div> <!--Links-->
+		</div> 
+		<!--Feelings page-->
+		<div id="feelings" data-theme="b" data-role="page" data-title="Lolgends: Feelings"> 
+			<div data-role="header" data-position="fixed"> <!--Header-->
+					<h1>Daily Fan Check-in</h1>
+					<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
+					<a href="#info" data-icon="info" data-iconpos="notext" data-rel="dialog">Info</a>
+			</div> <!--Header-->
+			<div data-role="content"> <!--content-->
+				<h3>Check In</h3>
+				<p>name: <input type="text" id="name"></p>
+				<p>age: <input type="number" id="age" min="0"></p>
+				<button id="add-admirer">Add!</button>
+				<h3>Check-ins for the Day</h3>
+				<ul id="admirers"></ul>
+			</div> <!--content-->
+			<div data-role="footer" data-position="fixed"> <!--Links-->
+				<div data-role="navbar"> <!--navbar-->
+					<ul>	
+						<li><a href="#home"
+						data-transition="pop"
+						data-role="button"
+						data-icon="home"
+						>Home</a></li> <!--Home Link--> 
+						<li><a href="#blog"
+						data-role="button"
+						data-icon="bars"
+						>Reddit</a></li> <!--Reddit Link-->			
+						<li><a href="#videos"  
+						data-role="button"
+						data-icon="video"
+						>Videos</a></li> <!--Videos Link-->
+						<li><a href="#tweets"  
+						data-role="button"
+						data-icon="user"
+						>Tweets</a></li> <!--Tweets Link-->
+					</ul>	
+				</div> <!--navbar-->
+			</div> <!--Links-->
+		</div> <!--Feelings page-->
+		<!--Info Page-->
+		<div data-role="page" id="info" data-theme="b"> 
+			<div data-role="header"> <!--Header-->
+				<h4>About</h4>
+			</div> <!--Header-->
+			<div data-role="content"> <!--Content-->
+				<div id = "aboutTitle">
+					<h4>Get all the latest JUICIEST League of Legends esports gossip! Exclusive pro gamer pics and videos! The hottest current LCS drama, scandals, divorces, rehab, and more!</h4>
+				</div>
+				<a href="#" data-role="button" data-rel="back">Cancel</a>
+				<a href="#home" data-role="button">home</a>
+			</div> <!--Content-->
+		</div> <!--Info Page-->
+	<!--Reading Reddit Feed using Reddit's API-->
+	<script type="text/javascript"> getRedditFeed(); </script> <!--read feed-->
+	<!--Twitter API-->
+	<script type="text/javascript"> getTwitterFeed(); </script>  <!--read feed-->
+	</body>
+</html>
